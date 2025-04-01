@@ -181,7 +181,7 @@ def unminimize(hyprctl: Hyprctl):
     address = client['address']
     workspace_id = tag.split(':')[-1]
 
-    untag_cmd = f"tagwindow workspace:{workspace_id} address:{address}"
+    untag_cmd = f"tagwindow -workspace:{workspace_id} address:{address}"
     move_cmd = f"movetoworkspace {workspace_id},address:{address}"
 
     hyprctl.batch(f"dispatch {untag_cmd}", f"dispatch {move_cmd}")
